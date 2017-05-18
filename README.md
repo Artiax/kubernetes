@@ -1,2 +1,2 @@
-# jenkins
-Jenkins with dynamic kubernetes slaves for image build pipeline.
+# Kubernetes
+- jenkins (jenkins master with dynamic kubernetes slaves for image build pipeline).
