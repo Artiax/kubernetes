@@ -1,0 +1,57 @@
+apiVersion: "v1"
+kind: "Service"
+metadata:
+  name: "consul"
+spec:
+  type: NodePort
+
+  ports:
+    - name: consul
+      port: 8500
+      nodePort: 30500
+
+  selector:
+    name: "consul"
+---
+apiVersion: "extensions/v1beta1"
+kind: "Deployment"
+metadata:
+  name: "consul"
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: "consul"
+      labels:
+        name: "consul"
+
+    spec:
+      containers:
+        - name: "consul"
+          image: "consul:latest"
+          imagePullPolicy: "Never"
+
+          args: ["agent"]
+
+          env:
+            - name: "CONSUL_LOCAL_CONFIG"
+              value: '{
+                "server": true,
+                "ui": true,
+                "bootstrap": true,
+                "client_addr": "0.0.0.0",
+                "bind_addr": "0.0.0.0",
+                "skip_leave_on_interrupt": true
+              }'
+
+          ports:
+            - containerPort: 8500
+
+          volumeMounts:
+            - name: "consul-data"
+              mountPath: "/consul/data"
+
+      volumes:
+        - name: consul-data
+          persistentVolumeClaim:
+            claimName: "consul-data"
