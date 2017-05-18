@@ -1,0 +1,12 @@
+node("docker") {
+  git branch: 'ci', url: "git@github.com:Artiax/kubernetes.git", changelog: false, poll: false
+
+  stage("Build") {
+    def build = docker.build "jenkins"
+  }
+
+  stage("Publish") {
+    def commit = sh(returnStdout: true, script: "git rev-parse HEAD").trim().take(8)
+    build.push "${commit}"
+  }
+}
