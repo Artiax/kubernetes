@@ -8,8 +8,8 @@ node("docker") {
     }
 
     stage("Build") {
-        dir('images/jenkins') {
-            image = docker.build "jenkins"
+        dir('images/docker-jenkins') {
+            image = docker.build "docker-jenkins"
         }
     }
 
