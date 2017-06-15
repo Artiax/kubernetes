@@ -1,206 +1,284 @@
-[
-  {
-     "plugin":"ace-editor",
-     "version":"1.1"
-  },
-  {
-     "plugin":"authentication-tokens",
-     "version":"1.3"
-  },
-  {
-     "plugin":"bouncycastle-api",
-     "version":"2.16.1"
-  },
-  {
-     "plugin":"branch-api",
-     "version":"2.0.9"
-  },
-  {
-     "plugin":"cloudbees-folder",
-     "version":"6.0.4"
-  },
-  {
-     "plugin":"credentials-binding",
-     "version":"1.11"
-  },
-  {
-     "plugin":"credentials",
-     "version":"2.1.13"
-  },
-  {
-     "plugin":"display-url-api",
-     "version":"2.0"
-  },
-  {
-     "plugin":"docker-commons",
-     "version":"1.6"
-  },
-  {
-     "plugin":"docker-workflow",
-     "version":"1.10"
-  },
-  {
-     "plugin":"durable-task",
-     "version":"1.13"
-  },
-  {
-     "plugin":"git-client",
-     "version":"2.4.5"
-  },
-  {
-     "plugin":"git-server",
-     "version":"1.7"
-  },
-  {
-     "plugin":"git",
-     "version":"3.3.0"
-  },
-  {
-     "plugin":"gitlab-plugin",
-     "version":"1.4.5"
-  },
-  {
-     "plugin":"handlebars",
-     "version":"1.1.1"
-  },
-  {
-     "plugin":"icon-shim",
-     "version":"2.0.3"
-  },
-  {
-     "plugin":"jquery-detached",
-     "version":"1.2.1"
-  },
-  {
-     "plugin":"junit",
-     "version":"1.20"
-  },
-  {
-    "plugin":"kubernetes",
-    "version":"0.11"
-  },
-  {
-     "plugin":"mailer",
-     "version":"1.20"
-  },
-  {
-     "plugin":"matrix-project",
-     "version":"1.10"
-  },
-  {
-     "plugin":"momentjs",
-     "version":"1.1.1"
-  },
-  {
-     "plugin":"pipeline-build-step",
-     "version":"2.5"
-  },
-  {
-     "plugin":"pipeline-graph-analysis",
-     "version":"1.3"
-  },
-  {
-     "plugin":"pipeline-input-step",
-     "version":"2.7"
-  },
-  {
-     "plugin":"pipeline-milestone-step",
-     "version":"1.3.1"
-  },
-  {
-     "plugin":"pipeline-model-api",
-     "version":"1.1.4"
-  },
-  {
-     "plugin":"pipeline-model-declarative-agent",
-     "version":"1.1.1"
-  },
-  {
-     "plugin":"pipeline-model-definition",
-     "version":"1.1.4"
-  },
-  {
-     "plugin":"pipeline-model-extensions",
-     "version":"1.1.4"
-  },
-  {
-     "plugin":"pipeline-rest-api",
-     "version":"2.6"
-  },
-  {
-     "plugin":"pipeline-stage-step",
-     "version":"2.2"
-  },
-  {
-     "plugin":"pipeline-stage-tags-metadata",
-     "version":"1.1.4"
-  },
-  {
-     "plugin":"pipeline-stage-view",
-     "version":"2.6"
-  },
-  {
-     "plugin":"plain-credentials",
-     "version":"1.4"
-  },
-  {
-     "plugin":"scm-api",
-     "version":"2.1.1"
-  },
-  {
-     "plugin":"script-security",
-     "version":"1.27"
-  },
-  {
-     "plugin":"ssh-credentials",
-     "version":"1.13"
-  },
-  {
-     "plugin":"structs",
-     "version":"1.6"
-  },
-  {
-     "plugin":"workflow-aggregator",
-     "version":"2.5"
-  },
-  {
-     "plugin":"workflow-api",
-     "version":"2.13"
-  },
-  {
-     "plugin":"workflow-basic-steps",
-     "version":"2.4"
-  },
-  {
-     "plugin":"workflow-cps-global-lib",
-     "version":"2.8"
-  },
-  {
-     "plugin":"workflow-cps",
-     "version":"2.30"
-  },
-  {
-     "plugin":"workflow-durable-task-step",
-     "version":"2.11"
-  },
-  {
-     "plugin":"workflow-job",
-     "version":"2.10"
-  },
-  {
-     "plugin":"workflow-multibranch",
-     "version":"2.14"
-  },
-  {
-     "plugin":"workflow-scm-step",
-     "version":"2.4"
-  },
-  {
-     "plugin":"workflow-step-api",
-     "version":"2.9"
-  },
-  {
-     "plugin":"workflow-support",
-     "version":"2.14"
-  }
-]
+{
+  "plugin": "ace-editor",
+  "version": "1.1"
+}
+{
+  "plugin": "authentication-tokens",
+  "version": "1.3"
+}
+{
+  "plugin": "bouncycastle-api",
+  "version": "2.16.1"
+}
+{
+  "plugin": "branch-api",
+  "version": "2.0.10"
+}
+{
+  "plugin": "branch-api",
+  "version": "2.0.9"
+}
+{
+  "plugin": "cloudbees-folder",
+  "version": "6.0.4"
+}
+{
+  "plugin": "credentials",
+  "version": "2.1.13"
+}
+{
+  "plugin": "credentials",
+  "version": "2.1.14"
+}
+{
+  "plugin": "credentials-binding",
+  "version": "1.11"
+}
+{
+  "plugin": "display-url-api",
+  "version": "2.0"
+}
+{
+  "plugin": "docker-commons",
+  "version": "1.6"
+}
+{
+  "plugin": "docker-workflow",
+  "version": "1.10"
+}
+{
+  "plugin": "docker-workflow",
+  "version": "1.11"
+}
+{
+  "plugin": "durable-task",
+  "version": "1.13"
+}
+{
+  "plugin": "git",
+  "version": "3.3.0"
+}
+{
+  "plugin": "git-client",
+  "version": "2.4.5"
+}
+{
+  "plugin": "git-client",
+  "version": "2.4.6"
+}
+{
+  "plugin": "gitlab-plugin",
+  "version": "1.4.5"
+}
+{
+  "plugin": "git-server",
+  "version": "1.7"
+}
+{
+  "plugin": "handlebars",
+  "version": "1.1.1"
+}
+{
+  "plugin": "icon-shim",
+  "version": "2.0.3"
+}
+{
+  "plugin": "jquery-detached",
+  "version": "1.2.1"
+}
+{
+  "plugin": "junit",
+  "version": "1.20"
+}
+{
+  "plugin": "kubernetes",
+  "version": "0.11"
+}
+{
+  "plugin": "mailer",
+  "version": "1.20"
+}
+{
+  "plugin": "matrix-project",
+  "version": "1.10"
+}
+{
+  "plugin": "matrix-project",
+  "version": "1.11"
+}
+{
+  "plugin": "momentjs",
+  "version": "1.1.1"
+}
+{
+  "plugin": "pipeline-build-step",
+  "version": "2.5"
+}
+{
+  "plugin": "pipeline-graph-analysis",
+  "version": "1.3"
+}
+{
+  "plugin": "pipeline-graph-analysis",
+  "version": "1.4"
+}
+{
+  "plugin": "pipeline-input-step",
+  "version": "2.7"
+}
+{
+  "plugin": "pipeline-milestone-step",
+  "version": "1.3.1"
+}
+{
+  "plugin": "pipeline-model-api",
+  "version": "1.1.4"
+}
+{
+  "plugin": "pipeline-model-api",
+  "version": "1.1.6"
+}
+{
+  "plugin": "pipeline-model-declarative-agent",
+  "version": "1.1.1"
+}
+{
+  "plugin": "pipeline-model-definition",
+  "version": "1.1.4"
+}
+{
+  "plugin": "pipeline-model-definition",
+  "version": "1.1.6"
+}
+{
+  "plugin": "pipeline-model-extensions",
+  "version": "1.1.4"
+}
+{
+  "plugin": "pipeline-model-extensions",
+  "version": "1.1.6"
+}
+{
+  "plugin": "pipeline-rest-api",
+  "version": "2.6"
+}
+{
+  "plugin": "pipeline-rest-api",
+  "version": "2.8"
+}
+{
+  "plugin": "pipeline-stage-step",
+  "version": "2.2"
+}
+{
+  "plugin": "pipeline-stage-tags-metadata",
+  "version": "1.1.4"
+}
+{
+  "plugin": "pipeline-stage-tags-metadata",
+  "version": "1.1.6"
+}
+{
+  "plugin": "pipeline-stage-view",
+  "version": "2.6"
+}
+{
+  "plugin": "pipeline-stage-view",
+  "version": "2.8"
+}
+{
+  "plugin": "plain-credentials",
+  "version": "1.4"
+}
+{
+  "plugin": "scm-api",
+  "version": "2.1.1"
+}
+{
+  "plugin": "script-security",
+  "version": "1.27"
+}
+{
+  "plugin": "script-security",
+  "version": "1.28"
+}
+{
+  "plugin": "ssh-credentials",
+  "version": "1.13"
+}
+{
+  "plugin": "structs",
+  "version": "1.6"
+}
+{
+  "plugin": "structs",
+  "version": "1.7"
+}
+{
+  "plugin": "workflow-aggregator",
+  "version": "2.5"
+}
+{
+  "plugin": "workflow-api",
+  "version": "2.13"
+}
+{
+  "plugin": "workflow-api",
+  "version": "2.17"
+}
+{
+  "plugin": "workflow-basic-steps",
+  "version": "2.4"
+}
+{
+  "plugin": "workflow-basic-steps",
+  "version": "2.5"
+}
+{
+  "plugin": "workflow-cps",
+  "version": "2.30"
+}
+{
+  "plugin": "workflow-cps",
+  "version": "2.35"
+}
+{
+  "plugin": "workflow-cps-global-lib",
+  "version": "2.8"
+}
+{
+  "plugin": "workflow-durable-task-step",
+  "version": "2.11"
+}
+{
+  "plugin": "workflow-job",
+  "version": "2.10"
+}
+{
+  "plugin": "workflow-job",
+  "version": "2.11"
+}
+{
+  "plugin": "workflow-multibranch",
+  "version": "2.14"
+}
+{
+  "plugin": "workflow-multibranch",
+  "version": "2.15"
+}
+{
+  "plugin": "workflow-scm-step",
+  "version": "2.4"
+}
+{
+  "plugin": "workflow-step-api",
+  "version": "2.11"
+}
+{
+  "plugin": "workflow-step-api",
+  "version": "2.9"
+}
+{
+  "plugin": "workflow-support",
+  "version": "2.14"
+}

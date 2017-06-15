@@ -2,7 +2,7 @@
 
 mkdir -p ${JENKINS_HOME}/plugins
 
-for plugin in $(jq '.[] | .plugin+":"+.version' $1 -r); do
+for plugin in $(jq '.plugin+":"+.version' $1 -r); do
   plugin=(${plugin//:/ })
   name=${plugin[0]}
   version=${plugin[1]}
