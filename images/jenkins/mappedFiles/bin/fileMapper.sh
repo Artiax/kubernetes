@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for mapping in $(jq '.[] | .from+":"+.to' $1 -r); do
+for mapping in $(jq '.from+":"+.to' $1 -r); do
   mapping="${mapping//:/ }"
   IFS=' ' read -a file <<< "$mapping"
 
