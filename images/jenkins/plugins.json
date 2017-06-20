@@ -21,7 +21,7 @@
   },
   {
     "plugin": "credentials-binding",
-    "version": "1.11"
+    "version": "1.12"
   },
   {
     "plugin": "credentials",
@@ -41,7 +41,7 @@
   },
   {
     "plugin": "durable-task",
-    "version": "1.13"
+    "version": "1.14"
   },
   {
     "plugin": "git-client",
@@ -149,7 +149,7 @@
   },
   {
     "plugin": "script-security",
-    "version": "1.28"
+    "version": "1.29"
   },
   {
     "plugin": "ssh-credentials",
@@ -157,7 +157,7 @@
   },
   {
     "plugin": "structs",
-    "version": "1.7"
+    "version": "1.8"
   },
   {
     "plugin": "workflow-aggregator",
@@ -181,7 +181,7 @@
   },
   {
     "plugin": "workflow-durable-task-step",
-    "version": "2.11"
+    "version": "2.12"
   },
   {
     "plugin": "workflow-job",
