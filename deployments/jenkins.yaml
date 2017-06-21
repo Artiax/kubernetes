@@ -22,10 +22,10 @@ metadata:
   name: "jenkins"
 spec:
   replicas: 1
-  minReadySeconds: 20
+  #minReadySeconds: 20
   strategy:
     rollingUpdate:
-      #maxUnavailable: 0
+      maxUnavailable: 0
       maxSurge: 2
   template:
     metadata:
