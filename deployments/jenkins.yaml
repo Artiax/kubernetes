@@ -22,8 +22,10 @@ metadata:
   name: "jenkins"
 spec:
   replicas: 1
+  minReadySeconds: 20
   strategy:
     rollingUpdate:
+      maxUnavailable: 0
       maxSurge: 2
   template:
     metadata:
@@ -44,8 +46,14 @@ spec:
           volumeMounts:
             - name: "jenkins-jobs"
               mountPath: "/var/jenkins_home/jobs"
+            - name: "jenkins-nodes"
+              mountPath: "/var/jenkins_home/nodes"
+
 
       volumes:
         - name: jenkins-jobs
           persistentVolumeClaim:
             claimName: "jenkins-jobs"
+        - name: jenkins-nodes
+          persistentVolumeClaim:
+            claimName: "jenkins-nodes"
