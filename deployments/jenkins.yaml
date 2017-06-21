@@ -53,6 +53,3 @@ spec:
         - name: jenkins-jobs
           persistentVolumeClaim:
             claimName: "jenkins-jobs"
-        - name: jenkins-nodes
-          persistentVolumeClaim:
-            claimName: "jenkins-nodes"
