@@ -23,7 +23,9 @@ metadata:
 spec:
   replicas: 1
   strategy:
-    type: Recreate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 2
   template:
     metadata:
       name: "jenkins"
