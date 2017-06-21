@@ -25,7 +25,7 @@ spec:
   minReadySeconds: 20
   strategy:
     rollingUpdate:
-      maxUnavailable: 0
+      #maxUnavailable: 0
       maxSurge: 2
   template:
     metadata:
@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
         - name: "jenkins"
-          image: "jenkins:fe9b076f"
+          image: "jenkins:latest"
           imagePullPolicy: "Never"
 
           ports:
