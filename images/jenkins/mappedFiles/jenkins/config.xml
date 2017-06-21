@@ -45,7 +45,7 @@
           <containers>
             <org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
               <name>jnlp</name>
-              <image>docker-slave:0.0.1</image>
+              <image>docker-slave:latest</image>
               <privileged>true</privileged>
               <alwaysPullImage>false</alwaysPullImage>
               <workingDir>/var/jenkins_home</workingDir>
