@@ -12,4 +12,7 @@ pipelineJob('jenkins') {
             scriptPath('images/jenkins/Jenkinsfile')
         }
     }
+    configure {
+       it / definition / lightweight(true)
+    }
 }
