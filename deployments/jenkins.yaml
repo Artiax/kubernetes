@@ -8,11 +8,12 @@ spec:
   ports:
     - name: ui
       port: 80
-      targetPort: 8080
-      nodePort: 30081
+      targetPort: 80
+      nodePort: 30080
     - name: slave
-      port: 50000
-      targetPort: 50000
+      port: 30050
+      targetPort: 30050
+      nodePort: 30050
   selector:
     name: "jenkins"
 ---
@@ -39,15 +40,12 @@ spec:
           imagePullPolicy: "Never"
 
           ports:
-            - containerPort: 8080
-            - containerPort: 50000
+            - containerPort: 80
+            - containerPort: 30050
 
           volumeMounts:
             - name: "jenkins-jobs"
               mountPath: "/var/jenkins_home/jobs"
-            - name: "jenkins-nodes"
-              mountPath: "/var/jenkins_home/nodes"
-
 
       volumes:
         - name: jenkins-jobs
