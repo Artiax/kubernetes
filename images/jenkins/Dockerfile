@@ -13,8 +13,8 @@ RUN apt-get update && \
 #######################################################################
 
 ENV JENKINS_HOME=/var/jenkins_home
-ENV JENKINS_MASTER_PORT=8080
-ENV JENKINS_SLAVE_PORT=50000
+ENV JENKINS_MASTER_PORT=80
+ENV JENKINS_SLAVE_PORT=30050
 ENV JENKINS_PLUGINS_URL=http://mirrors.jenkins.io/plugins
 
 ARG JENKINS_VERSION=2.46.2
