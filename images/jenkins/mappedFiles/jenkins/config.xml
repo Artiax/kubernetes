@@ -67,7 +67,6 @@
       <serverUrl>https://kubernetes.default.svc.cluster.local</serverUrl>
       <skipTlsVerify>false</skipTlsVerify>
       <namespace>default</namespace>
-      <jenkinsUrl>http://jenkins.default.svc.cluster.local</jenkinsUrl>
       <containerCap>10</containerCap>
       <retentionTimeout>5</retentionTimeout>
       <connectTimeout>0</connectTimeout>
