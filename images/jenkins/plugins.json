@@ -56,10 +56,6 @@
     "version": "3.3.0"
   },
   {
-    "plugin": "gitlab-plugin",
-    "version": "1.4.5"
-  },
-  {
     "plugin": "greenballs",
     "version": "1.15"
   },
@@ -70,6 +66,10 @@
   {
     "plugin": "icon-shim",
     "version": "2.0.3"
+  },
+  {
+    "plugin": "job-dsl",
+    "version": "1.63"
   },
   {
     "plugin": "jquery-detached",
