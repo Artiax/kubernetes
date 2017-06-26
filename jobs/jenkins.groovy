@@ -52,7 +52,7 @@ pipelineJob('deployments/jenkins') {
 
                     stage('Deploy') {
                         dir('deployments') {
-                            sh 'sed -ri "s/(image:.*jenkins:)[a-z0-9\\.]*/\\1\$TAG/" jenkins.yaml'
+                            sh 'sed -ri "s/(image:.*jenkins:)[a-z0-9\\\.]*/\\\1$TAG/" jenkins.yaml'
                             sh 'kubectl apply --record -f jenkins.yaml'
                         }
                     }
