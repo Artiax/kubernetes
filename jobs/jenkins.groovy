@@ -42,7 +42,7 @@ pipelineJob('deployments/jenkins') {
     }
     definition {
         cps {
-            script("""
+            script('''
                 echo 'Spawning a slave for this job...'
 
                 node('docker') {
@@ -52,12 +52,12 @@ pipelineJob('deployments/jenkins') {
 
                     stage('Deploy') {
                         dir('deployments') {
-                            sh 'sed -ri "s/(image:.*jenkins:)[a-z0-9\\\.]*/\\\1$TAG/" jenkins.yaml'
+                            sh 'sed -ri "s/(image:.*jenkins:)[a-z0-9\.]*/\1$TAG/" jenkins.yaml'
                             sh 'kubectl apply --record -f jenkins.yaml'
                         }
                     }
                 }
-            """.stripIndent())
+            '''.stripIndent())
             sandbox(true)
         }
     }
