@@ -25,7 +25,7 @@ node("docker") {
 timeout(time: 15, unit: 'MINUTES') {
     try {
         input(id: 'deploy', message: 'Deploy this image?')
-        build job: 'deployments/jenkins', parameters: [string(name: 'TAG', value: "${commit}")], wait: false
+        build job: 'deployments/httpd', parameters: [string(name: 'TAG', value: "${commit}")], wait: false
     } catch(err) {
         currentBuild.result = 'SUCCESS'
     }
