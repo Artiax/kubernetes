@@ -57,7 +57,7 @@ pipelineJob('deployments/jenkins') {
                         }
                     }
                 }
-            $/.stripIndent())
+            /$.stripIndent())
             sandbox(true)
         }
     }
