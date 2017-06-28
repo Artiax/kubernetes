@@ -23,7 +23,7 @@ pipelineJob('deployments/httpd') {
     }
     definition {
         cps {
-            def job = $/
+            def job = /
                 echo 'Spawning a slave for this job...'
 
                 node('docker') {
@@ -38,7 +38,7 @@ pipelineJob('deployments/httpd') {
                         }
                     }
                 }
-            /$
+            /
             script(job.stripIndent())
             sandbox(true)
         }
