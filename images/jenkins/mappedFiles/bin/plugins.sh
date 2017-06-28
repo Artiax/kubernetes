@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 mkdir -p ${JENKINS_HOME}/plugins
 
 for plugin in $(jq '.[] | .plugin+":"+.version' $1 -r); do

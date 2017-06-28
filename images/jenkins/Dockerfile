@@ -15,7 +15,7 @@ RUN apt-get update && \
 ENV JENKINS_HOME=/var/jenkins_home
 ENV JENKINS_MASTER_PORT=80
 ENV JENKINS_SLAVE_PORT=30050
-ENV JENKINS_PLUGINS_URL=https://updates.jenkins.io/plugins
+ENV JENKINS_PLUGINS_URL=http://mirrors.jenkins.io/plugins
 
 ARG JENKINS_VERSION=2.46.2
 ARG JENKINS_URL=https://repo.jenkins-ci.org/public/org/jenkins-ci/main/jenkins-war/${JENKINS_VERSION}/jenkins-war-${JENKINS_VERSION}.war
