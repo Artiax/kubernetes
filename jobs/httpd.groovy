@@ -23,7 +23,7 @@ pipelineJob('deployments/httpd') {
     }
     definition {
         cps {
-            def job = /
+            def job = $/
                 echo 'Spawning a slave for this job...'
 
                 node('docker') {
@@ -33,12 +33,12 @@ pipelineJob('deployments/httpd') {
 
                     stage('Deploy') {
                         dir('deployments') {
-                            sh 'sed -ri "s/(image:.*httpd:)[a-z0-9\.]*/\1$TAG/" httpd.yaml'
+                            sh 'sed -ri "s/(image:.*httpd:)[a-z0-9\.]*/\1$$TAG/" httpd.yaml'
                             sh 'kubectl apply --record -f httpd.yaml'
                         }
                     }
                 }
-            /
+            /$
             script(job.stripIndent())
             sandbox(true)
         }
