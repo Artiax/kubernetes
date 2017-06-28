@@ -34,5 +34,11 @@ spec:
           image: "httpd:latest"
           imagePullPolicy: "Never"
 
+          readinessProbe:
+            httpGet:
+              path: /index.html
+            initialDelaySeconds: 5
+            periodSeconds: 5
+
           ports:
             - containerPort: 80

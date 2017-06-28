@@ -39,6 +39,12 @@ spec:
           image: "jenkins:latest"
           imagePullPolicy: "Never"
 
+          readinessProbe:
+            httpGet:
+              path: /robots.txt
+            initialDelaySeconds: 10
+            periodSeconds: 5
+
           ports:
             - containerPort: 80
             - containerPort: 30050
