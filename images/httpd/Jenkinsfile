@@ -11,7 +11,7 @@ node("docker") {
 
     stage("Build") {
         dir('images/httpd') {
-            sh 'sed -ri "s/COMMIT_ID/${commit}/" index.html'
+            sh "sed -ri "s/COMMIT_ID/${commit}/" index.html"
             image = docker.build 'httpd'
         }
     }
