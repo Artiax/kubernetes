@@ -13,7 +13,7 @@
 
                   node('docker') {
                       stage('Clone') {
-                          git branch: "${deployment.branch}", url: "${deployment.repository}", changelog: false, poll: false
+                          git branch: '${deployment.branch}', url: '${deployment.repository}', changelog: false, poll: false
                       }
 
                       stage('Deploy') {

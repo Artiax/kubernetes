@@ -8,13 +8,13 @@
           cpsScm {
               scm {
                   git {
-                      branch("${image.branch}")
+                      branch('${image.branch}')
                       remote {
-                          url("${image.repository}")
+                          url('${image.repository}')
                       }
                   }
               }
-              scriptPath("images/${image.name}/Jenkinsfile")
+              scriptPath('images/${image.name}/Jenkinsfile')
           }
       }
       configure {
