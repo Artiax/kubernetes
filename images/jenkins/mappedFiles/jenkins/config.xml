@@ -21,7 +21,7 @@
       <templates>
         <org.csanchez.jenkins.plugins.kubernetes.PodTemplate>
           <inheritFrom></inheritFrom>
-          <name>docker-slave</name>
+          <name>jenkins-slave</name>
           <privileged>false</privileged>
           <alwaysPullImage>false</alwaysPullImage>
           <instanceCap>2147483647</instanceCap>
@@ -45,7 +45,7 @@
           <containers>
             <org.csanchez.jenkins.plugins.kubernetes.ContainerTemplate>
               <name>jnlp</name>
-              <image>docker-slave:latest</image>
+              <image>jenkins-slave:latest</image>
               <privileged>true</privileged>
               <alwaysPullImage>false</alwaysPullImage>
               <workingDir>/var/jenkins_home</workingDir>

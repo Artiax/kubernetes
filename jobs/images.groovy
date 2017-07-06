@@ -2,7 +2,7 @@
 
 
   [name: 'jenkins', repository: 'https://github.com/Artiax/kubernetes.git', branch: 'development'],
-  [name: 'docker-slave', repository: 'https://github.com/Artiax/kubernetes.git', branch: 'development'],
+  [name: 'jenkins-slave', repository: 'https://github.com/Artiax/kubernetes.git', branch: 'development'],
   [name: 'httpd', repository: 'https://github.com/Artiax/kubernetes.git', branch: 'development'],
 
 
