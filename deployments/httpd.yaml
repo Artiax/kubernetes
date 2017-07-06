@@ -19,9 +19,6 @@ metadata:
   name: "httpd"
 spec:
   replicas: 2
-  strategy:
-    rollingUpdate:
-      maxUnavailable: '50%'
   template:
     metadata:
       name: "httpd"
