@@ -1,7 +1,11 @@
 [
+
+
   [name: 'jenkins', repository: 'https://github.com/Artiax/kubernetes.git', branch: 'development'],
   [name: 'docker-slave', repository: 'https://github.com/Artiax/kubernetes.git', branch: 'development'],
   [name: 'httpd', repository: 'https://github.com/Artiax/kubernetes.git', branch: 'development'],
+
+
 ].each { Map image ->
   pipelineJob("images/${image.name}") {
       definition {

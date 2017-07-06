@@ -1,6 +1,10 @@
 [
-  [name: 'jenkins', repository: 'https://github.com/Artiax/kubernetes.git', branch: 'development'],
-  [name: 'httpd', repository: 'https://github.com/Artiax/kubernetes.git', branch: 'development'],
+
+
+  [ name: 'jenkins', repository: 'https://github.com/Artiax/kubernetes.git', branch: 'development' ],
+  [ name: 'httpd', repository: 'https://github.com/Artiax/kubernetes.git', branch: 'development' ],
+
+
 ].each { Map deployment ->
   pipelineJob("deployments/${deployment.name}") {
       parameters {
