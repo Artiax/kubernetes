@@ -20,12 +20,12 @@
     "version": "6.0.4"
   },
   {
-    "plugin": "credentials-binding",
-    "version": "1.12"
-  },
-  {
     "plugin": "credentials",
     "version": "2.1.14"
+  },
+  {
+    "plugin": "credentials-binding",
+    "version": "1.12"
   },
   {
     "plugin": "display-url-api",
@@ -44,16 +44,16 @@
     "version": "1.14"
   },
   {
+    "plugin": "git",
+    "version": "3.3.1"
+  },
+  {
     "plugin": "git-client",
     "version": "2.4.6"
   },
   {
     "plugin": "git-server",
     "version": "1.7"
-  },
-  {
-    "plugin": "git",
-    "version": "3.3.1"
   },
   {
     "plugin": "greenballs",
@@ -113,7 +113,7 @@
   },
   {
     "plugin": "pipeline-model-api",
-    "version": "1.1.7"
+    "version": "1.1.8"
   },
   {
     "plugin": "pipeline-model-declarative-agent",
@@ -121,11 +121,11 @@
   },
   {
     "plugin": "pipeline-model-definition",
-    "version": "1.1.7"
+    "version": "1.1.8"
   },
   {
     "plugin": "pipeline-model-extensions",
-    "version": "1.1.7"
+    "version": "1.1.8"
   },
   {
     "plugin": "pipeline-rest-api",
@@ -137,7 +137,7 @@
   },
   {
     "plugin": "pipeline-stage-tags-metadata",
-    "version": "1.1.6"
+    "version": "1.1.8"
   },
   {
     "plugin": "pipeline-stage-view",
@@ -161,7 +161,7 @@
   },
   {
     "plugin": "structs",
-    "version": "1.8"
+    "version": "1.9"
   },
   {
     "plugin": "workflow-aggregator",
@@ -169,19 +169,19 @@
   },
   {
     "plugin": "workflow-api",
-    "version": "2.17"
+    "version": "2.18"
   },
   {
     "plugin": "workflow-basic-steps",
-    "version": "2.5"
-  },
-  {
-    "plugin": "workflow-cps-global-lib",
-    "version": "2.8"
+    "version": "2.6"
   },
   {
     "plugin": "workflow-cps",
     "version": "2.36"
+  },
+  {
+    "plugin": "workflow-cps-global-lib",
+    "version": "2.8"
   },
   {
     "plugin": "workflow-durable-task-step",
@@ -201,7 +201,7 @@
   },
   {
     "plugin": "workflow-step-api",
-    "version": "2.11"
+    "version": "2.12"
   },
   {
     "plugin": "workflow-support",
