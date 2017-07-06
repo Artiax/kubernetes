@@ -41,8 +41,8 @@ spec:
 
           readinessProbe:
             httpGet:
-              port: 8080
               path: /robots.txt
+              port: 80
             initialDelaySeconds: 10
             periodSeconds: 5
 
