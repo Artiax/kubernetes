@@ -18,8 +18,8 @@
 
                       stage('Deploy') {
                           dir('deployments') {
-                              sh "sed -ri "s/(image:.*${deployment.name}:)[a-z0-9\\.]*/\\1$$TAG/" ${deployment.name}.yaml"
-                              sh "kubectl apply --record -f ${deployment.name}.yaml"
+                              sh 'sed -ri "s/(image:.*${deployment.name}:)[a-z0-9\\.]*/\\1$$TAG/" ${deployment.name}.yaml'
+                              sh 'kubectl apply --record -f ${deployment.name}.yaml'
                           }
                       }
                   }
