@@ -4,7 +4,7 @@ metadata:
   name: "consul-data"
 spec:
   accessModes:
-    - ReadWriteOnce
+    - "ReadWriteOnce"
   resources:
     requests:
-      storage: 1Gi
+      storage: "100Mi"

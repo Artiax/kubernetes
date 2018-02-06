@@ -1,27 +1,14 @@
-apiVersion: "v1"
-kind: "Service"
-metadata:
-  name: "consul"
-spec:
-  type: NodePort
-
-  ports:
-    - name: consul
-      port: 8500
-      nodePort: 30500
-
-  selector:
-    name: "consul"
----
-apiVersion: "extensions/v1beta1"
+apiVersion: "apps/v1beta2"
 kind: "Deployment"
 metadata:
   name: "consul"
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      name: "consul"
   template:
     metadata:
-      name: "consul"
       labels:
         name: "consul"
 
@@ -29,7 +16,7 @@ spec:
       containers:
         - name: "consul"
           image: "consul:latest"
-          imagePullPolicy: "Never"
+          imagePullPolicy: "IfNotPresent"
 
           args: ["agent"]
 
@@ -52,6 +39,6 @@ spec:
               mountPath: "/consul/data"
 
       volumes:
-        - name: consul-data
+        - name: "consul-data"
           persistentVolumeClaim:
             claimName: "consul-data"

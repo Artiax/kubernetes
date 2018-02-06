@@ -1,27 +1,14 @@
-apiVersion: "v1"
-kind: "Service"
-metadata:
-  name: "vault"
-spec:
-  type: NodePort
-
-  ports:
-    - name: vault
-      port: 8200
-      nodePort: 30200
-
-  selector:
-    name: "vault"
----
-apiVersion: "extensions/v1beta1"
+apiVersion: "apps/v1beta2"
 kind: "Deployment"
 metadata:
   name: "vault"
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      name: "vault"
   template:
     metadata:
-      name: "vault"
       labels:
         name: "vault"
 
@@ -29,7 +16,7 @@ spec:
       containers:
         - name: "vault"
           image: "vault:latest"
-          imagePullPolicy: "Never"
+          imagePullPolicy: "IfNotPresent"
 
           args: ["server"]
 
@@ -62,6 +49,6 @@ spec:
               mountPath: "/vault/file"
 
       volumes:
-        - name: vault-data
+        - name: "vault-data"
           persistentVolumeClaim:
             claimName: "vault-data"
