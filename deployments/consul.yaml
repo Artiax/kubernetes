@@ -1,0 +1,44 @@
+apiVersion: "apps/v1beta2"
+kind: "Deployment"
+metadata:
+  name: "consul"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: "consul"
+  template:
+    metadata:
+      labels:
+        name: "consul"
+
+    spec:
+      containers:
+        - name: "consul"
+          image: "consul:latest"
+          imagePullPolicy: "IfNotPresent"
+
+          args: ["agent"]
+
+          env:
+            - name: "CONSUL_LOCAL_CONFIG"
+              value: '{
+                "server": true,
+                "ui": true,
+                "bootstrap": true,
+                "client_addr": "0.0.0.0",
+                "bind_addr": "0.0.0.0",
+                "skip_leave_on_interrupt": true
+              }'
+
+          ports:
+            - containerPort: 8500
+
+          volumeMounts:
+            - name: "consul-data"
+              mountPath: "/consul/data"
+
+      volumes:
+        - name: "consul-data"
+          persistentVolumeClaim:
+            claimName: "consul-data"
