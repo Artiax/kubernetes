@@ -2,6 +2,7 @@
 - Consul
 - Vault
 - Jenkins (master with dynamic kubernetes slaves for image build pipeline).
+- Tiller (helm)
 
 ## Minikube
 For instructions on how to setup Minikube on your machine refer to [Install Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/).
@@ -25,17 +26,17 @@ $ kubectl apply -f persistentVolumeClaims/vault.yaml
 $ kubectl apply -f services/vault.yaml -f deployments/vault.yaml
 
 # Initialize Vault (save the unseal keys and initial root token)
-$ export VAULT_ADDR=$(minikube service vault --url --https)
+$ export VAULT_ADDR=$(minikube service vault --url)
 $ vault init
 
 # Unseal Vault (repeat this step every time container is restarted)
-$ export VAULT_ADDR=$(minikube service vault --url --https)
+$ export VAULT_ADDR=$(minikube service vault --url)
 $ vault unseal [Unseal Key 1]
 $ vault unseal [Unseal Key 2]
 $ vault unseal [Unseal Key 3]
 
 # Access Vault.
-$ export VAULT_ADDR=$(minikube service vault --url --https)
+$ export VAULT_ADDR=$(minikube service vault --url)
 $ export VAULT_TOKEN='[Initial Root Token]'
 $ vault status
 ```
@@ -58,4 +59,14 @@ $ kubectl apply -f services/jenkins.yaml -f deployments/jenkins.yaml
 
 # Access Jenkins UI.
 $ minikube service jenkins
+```
+
+## Tiller
+```sh
+# Create a service and deployment for Tiller.
+$ kubectl apply -f services/tiller.yaml -f deployments/tiller.yaml
+
+# Access Helm (we're having to use cut to remove http:// protocol as --format in minikube is currently broken)
+$ export HELM_HOST=$(minikube service tiller -n kube-system --url | cut -d '/' -f3)
+$ helm version
 ```
