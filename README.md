@@ -9,7 +9,8 @@ For instructions on how to setup Minikube on your machine refer to [Install Mini
 ```sh
 # Start minikube (the following configuration is what this project has been built/tested on)
 $ minikube start \
-  --kubernetes-version v1.9.8 \ --extra-config=apiserver.admission-control="Initializers,NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,ValidatingAdmissionWebhook,ResourceQuota" \
+  --kubernetes-version v1.9.8 \
+  --extra-config=apiserver.admission-control="Initializers,NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,ValidatingAdmissionWebhook,ResourceQuota" \
   --extra-config=apiserver.authorization-mode="RBAC"
 ```
 
