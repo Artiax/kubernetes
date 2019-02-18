@@ -61,6 +61,8 @@ $ docker build -t jenkins-slave:0.0.1 -t jenkins-slave:latest jenkins-slave
 
 # Create a persistent volume to retain the jobs when container is restarted.
 $ kubectl apply -f persistentVolumeClaims/jenkins.yaml
+# Create a service account and relevant policies required for slave provisioning.
+$ kubectl apply -f serviceAccounts/jenkins.yaml -f roles/jenkins.yaml -f roleBindings/jenkins.yaml
 # Create a service and deployment for Jenkins.
 $ kubectl apply -f services/jenkins.yaml -f deployments/jenkins.yaml
 
