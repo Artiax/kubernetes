@@ -12,26 +12,28 @@ spec:
         name: "jenkins"
 
     spec:
+      serviceAccountName: "jenkins"
+
       containers:
-        - name: "jenkins"
-          image: "jenkins:0.0.1"
-          imagePullPolicy: "Never"
+      - name: "jenkins"
+        image: "jenkins:0.0.1"
+        imagePullPolicy: "Never"
 
-          readinessProbe:
-            httpGet:
-              path: /login
-              port: 80
-            initialDelaySeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /login
+            port: 80
+          initialDelaySeconds: 30
 
-          ports:
-            - containerPort: 80
-            - containerPort: 30050
+        ports:
+        - containerPort: 80
+        - containerPort: 30050
 
-          volumeMounts:
-            - name: "jenkins-jobs"
-              mountPath: "/var/jenkins/jobs"
+        volumeMounts:
+        - name: "jenkins-jobs"
+          mountPath: "/var/jenkins/jobs"
 
       volumes:
-        - name: "jenkins-jobs"
-          persistentVolumeClaim:
-            claimName: "jenkins-jobs"
+      - name: "jenkins-jobs"
+        persistentVolumeClaim:
+          claimName: "jenkins-jobs"
