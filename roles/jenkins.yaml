@@ -7,4 +7,4 @@ rules:
 - apiGroups: ["*"]
   resources:
     - pods
-  verbs: ["get"]
+  verbs: ["create","list","get","delete"]
