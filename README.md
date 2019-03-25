@@ -66,6 +66,9 @@ $ kubectl apply -f serviceAccounts/jenkins.yaml -f roles/jenkins.yaml -f roleBin
 # Create a service and deployment for Jenkins.
 $ kubectl apply -f services/jenkins.yaml -f deployments/jenkins.yaml
 
+# Use the following URL to create first admin user
+$ echo $(minikube service jenkins --url | head -1)/securityRealm/firstUser
+
 # Access Jenkins UI.
 $ minikube service jenkins
 ```
@@ -75,7 +78,7 @@ $ minikube service jenkins
 # Create a service and deployment for Tiller.
 $ kubectl apply -f services/tiller.yaml -f deployments/tiller.yaml
 
-# Access Helm (we're having to use cut to remove http:// protocol as --format in minikube is currently broken)
-$ export HELM_HOST=$(minikube service tiller -n kube-system --url | cut -d '/' -f3)
+# Access Helm
+$ export HELM_HOST=$(minikube service tiller -n kube-system --url --format "{{.IP}}:{{.Port}}")
 $ helm version
 ```
