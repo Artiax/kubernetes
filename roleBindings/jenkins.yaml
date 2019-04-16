@@ -5,7 +5,7 @@ metadata:
   namespace: "default"
 roleRef:
   apiGroup: "rbac.authorization.k8s.io"
-  kind: "Role"
+  kind: "ClusterRole"
   name: "jenkins"
 subjects:
 - kind: "ServiceAccount"

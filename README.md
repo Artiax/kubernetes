@@ -9,8 +9,8 @@ For instructions on how to setup Minikube on your machine refer to [Install Mini
 ```sh
 # Start minikube (the following configuration is what this project has been built/tested on)
 $ minikube start \
-  --kubernetes-version v1.9.8 \
-  --extra-config=apiserver.admission-control="Initializers,NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,ValidatingAdmissionWebhook,ResourceQuota" \
+  --kubernetes-version v1.11.8 \
+  --extra-config=apiserver.enable-admission-plugins="Initializers,NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,ResourceQuota" \
   --extra-config=apiserver.authorization-mode="RBAC"
 ```
 
@@ -62,7 +62,7 @@ $ docker build -t jenkins-slave:0.0.1 -t jenkins-slave:latest jenkins-slave
 # Create a persistent volume to retain the jobs when container is restarted.
 $ kubectl apply -f persistentVolumeClaims/jenkins.yaml
 # Create a service account and relevant policies required for slave provisioning.
-$ kubectl apply -f serviceAccounts/jenkins.yaml -f roles/jenkins.yaml -f roleBindings/jenkins.yaml
+$ kubectl apply -f serviceAccounts/jenkins.yaml -f clusterRoles/jenkins.yaml -f roleBindings/jenkins.yaml
 # Create a service and deployment for Jenkins.
 $ kubectl apply -f services/jenkins.yaml -f deployments/jenkins.yaml
 
