@@ -3,6 +3,8 @@ kind: "Deployment"
 metadata:
   name: "jenkins"
 spec:
+  strategy:
+    type: "Recreate"
   selector:
     matchLabels:
       name: "jenkins"
@@ -33,6 +35,9 @@ spec:
         - name: "jenkins-data"
           subPath: "jobs"
           mountPath: "/var/jenkins/jobs"
+        - name: "jenkins-data"
+          subPath: "nodes"
+          mountPath: "/var/jenkins/nodes"
         - name: "jenkins-data"
           subPath: "users"
           mountPath: "/var/jenkins/users"

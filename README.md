@@ -66,7 +66,7 @@ $ kubectl apply -f serviceAccounts/jenkins.yaml -f clusterRoles/jenkins.yaml -f 
 # Create a service and deployment for Jenkins.
 $ kubectl apply -f services/jenkins.yaml -f deployments/jenkins.yaml
 
-# Use the following URL to create first admin user
+# Use the following URL to create first admin user.
 $ echo $(minikube service jenkins --url | head -1)/securityRealm/firstUser
 
 # Access Jenkins UI.
