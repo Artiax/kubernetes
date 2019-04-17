@@ -63,8 +63,8 @@ $ kubectl apply -f services/phpldapadmin.yaml -f deployments/phpldapadmin.yaml
 
 # Access Jenkins UI.
 $ minikube service phpldapadmin --https
+  Password: admin
 ```
-**Password:** admin
 
 ## Jenkins
 ```sh
