@@ -7,8 +7,8 @@ spec:
   type: "NodePort"
 
   ports:
-    - port: 44134
-      nodePort: 30134
+  - port: 44134
+    nodePort: 30134
 
   selector:
     name: "tiller"

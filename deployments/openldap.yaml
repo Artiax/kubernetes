@@ -1,0 +1,40 @@
+apiVersion: "apps/v1beta2"
+kind: "Deployment"
+metadata:
+  name: "openldap"
+spec:
+  strategy:
+    type: "Recreate"
+  selector:
+    matchLabels:
+      name: "openldap"
+  template:
+    metadata:
+      labels:
+        name: "openldap"
+
+    spec:
+      containers:
+      - name: "openldap"
+        image: "osixia/openldap:1.2.4"
+        imagePullPolicy: "IfNotPresent"
+
+        env:
+        - name: "LDAP_TLS"
+          value: "false"
+
+        ports:
+        - containerPort: 389
+
+        volumeMounts:
+        - name: "openldap-data"
+          subPath: "database"
+          mountPath: "/var/lib/ldap"
+        - name: "openldap-data"
+          subPath: "config"
+          mountPath: "/etc/ldap/slapd.d"
+
+      volumes:
+      - name: "openldap-data"
+        persistentVolumeClaim:
+          claimName: "openldap-data"

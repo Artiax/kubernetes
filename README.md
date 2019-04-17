@@ -48,6 +48,24 @@ $ export VAULT_TOKEN='[Initial Root Token]'
 $ vault status
 ```
 
+## OpenLDAP
+```sh
+# Create a persistent volume to retain the data when container is restarted.
+$ kubectl apply -f persistentVolumeClaims/openldap.yaml
+# Create a service and deployment for OpenLDAP.
+$ kubectl apply -f services/openldap.yaml -f deployments/openldap.yaml
+```
+
+## phpLDAPadmin
+```sh
+# Create a service and deployment for phpLDAPadmin.
+$ kubectl apply -f services/phpldapadmin.yaml -f deployments/phpldapadmin.yaml
+
+# Access Jenkins UI.
+$ minikube service phpldapadmin --https
+```
+**Password:** admin
+
 ## Jenkins
 ```sh
 # Clone required repositories.

@@ -1,13 +1,13 @@
 apiVersion: "v1"
 kind: "Service"
 metadata:
-  name: "vault"
+  name: "phpldapadmin"
 spec:
   type: "NodePort"
 
   ports:
-  - port: 8200
-    nodePort: 30200
+  - port: 443
+    nodePort: 30443
 
   selector:
-    name: "vault"
+    name: "phpldapadmin"

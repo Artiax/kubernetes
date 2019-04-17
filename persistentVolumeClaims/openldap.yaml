@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: "consul-data"
+  name: "openldap-data"
 spec:
   accessModes:
   - "ReadWriteOnce"

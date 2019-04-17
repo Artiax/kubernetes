@@ -1,0 +1,27 @@
+apiVersion: "apps/v1beta2"
+kind: "Deployment"
+metadata:
+  name: "phpldapadmin"
+spec:
+  strategy:
+    type: "Recreate"
+  selector:
+    matchLabels:
+      name: "phpldapadmin"
+  template:
+    metadata:
+      labels:
+        name: "phpldapadmin"
+
+    spec:
+      containers:
+      - name: "phpldapadmin"
+        image: "osixia/phpldapadmin:0.7.2"
+        imagePullPolicy: "IfNotPresent"
+
+        env:
+        - name: "PHPLDAPADMIN_LDAP_HOSTS"
+          value: "#PYTHON2BASH:[{'openldap.default.svc.cluster.local': [{'server': [{'tls': False}]},{'login': [{'bind_id': 'cn=admin,dc=example,dc=org'}]}]}]"
+
+        ports:
+        - containerPort: 443

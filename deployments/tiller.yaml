@@ -19,12 +19,12 @@ spec:
         imagePullPolicy: "IfNotPresent"
 
         env:
-          - name: "TILLER_NAMESPACE"
-            valueFrom:
-              fieldRef:
-                fieldPath: "metadata.namespace"
-          - name: "TILLER_HISTORY_MAX"
-            value: "0"
+        - name: "TILLER_NAMESPACE"
+          valueFrom:
+            fieldRef:
+              fieldPath: "metadata.namespace"
+        - name: "TILLER_HISTORY_MAX"
+          value: "0"
 
         readinessProbe:
           httpGet:
@@ -41,4 +41,4 @@ spec:
           timeoutSeconds: 1
 
         ports:
-          - containerPort: 44134
+        - containerPort: 44134

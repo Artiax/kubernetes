@@ -3,6 +3,8 @@ kind: "Deployment"
 metadata:
   name: "consul"
 spec:
+  strategy:
+    type: "Recreate"
   selector:
     matchLabels:
       name: "consul"
@@ -13,31 +15,31 @@ spec:
 
     spec:
       containers:
-        - name: "consul"
-          image: "consul:latest"
-          imagePullPolicy: "IfNotPresent"
+      - name: "consul"
+        image: "consul:latest"
+        imagePullPolicy: "IfNotPresent"
 
-          args: ["agent"]
+        args: ["agent"]
 
-          env:
-            - name: "CONSUL_LOCAL_CONFIG"
-              value: '{
-                "server": true,
-                "ui": true,
-                "bootstrap": true,
-                "client_addr": "0.0.0.0",
-                "bind_addr": "0.0.0.0",
-                "skip_leave_on_interrupt": true
-              }'
+        env:
+        - name: "CONSUL_LOCAL_CONFIG"
+          value: '{
+            "server": true,
+            "ui": true,
+            "bootstrap": true,
+            "client_addr": "0.0.0.0",
+            "bind_addr": "0.0.0.0",
+            "skip_leave_on_interrupt": true
+          }'
 
-          ports:
-            - containerPort: 8500
+        ports:
+        - containerPort: 8500
 
-          volumeMounts:
-            - name: "consul-data"
-              mountPath: "/consul/data"
+        volumeMounts:
+        - name: "consul-data"
+          mountPath: "/consul/data"
 
       volumes:
-        - name: "consul-data"
-          persistentVolumeClaim:
-            claimName: "consul-data"
+      - name: "consul-data"
+        persistentVolumeClaim:
+          claimName: "consul-data"

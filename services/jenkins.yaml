@@ -6,11 +6,12 @@ spec:
   type: "NodePort"
 
   ports:
-    - name: "ui"
-      port: 80
-      nodePort: 30080
-    - name: "slave"
-      port: 30050
-      nodePort: 30050
+  - name: "ui"
+    port: 80
+    nodePort: 30080
+  - name: "slave"
+    port: 30050
+    nodePort: 30050
+
   selector:
     name: "jenkins"

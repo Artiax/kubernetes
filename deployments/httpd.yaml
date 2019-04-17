@@ -14,16 +14,16 @@ spec:
 
     spec:
       containers:
-        - name: "httpd"
-          image: "httpd:latest"
-          imagePullPolicy: "IfNotPresent"
+      - name: "httpd"
+        image: "httpd:latest"
+        imagePullPolicy: "IfNotPresent"
 
-          readinessProbe:
-            httpGet:
-              port: 80
-              path: "/index.html"
-            initialDelaySeconds: 5
-            periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            port: 80
+            path: "/index.html"
+          initialDelaySeconds: 5
+          periodSeconds: 5
 
-          ports:
-            - containerPort: 80
+        ports:
+        - containerPort: 80

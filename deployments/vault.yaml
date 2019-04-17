@@ -3,6 +3,8 @@ kind: "Deployment"
 metadata:
   name: "vault"
 spec:
+  strategy:
+    type: "Recreate"
   selector:
     matchLabels:
       name: "vault"
@@ -13,41 +15,41 @@ spec:
 
     spec:
       containers:
-        - name: "vault"
-          image: "vault:latest"
-          imagePullPolicy: "IfNotPresent"
+      - name: "vault"
+        image: "vault:latest"
+        imagePullPolicy: "IfNotPresent"
 
-          args: ["server"]
+        args: ["server"]
 
-          env:
-            - name: "SKIP_SETCAP"
-              value: "true"
-            - name: "VAULT_LOCAL_CONFIG"
-              value: '{
-                "default_lease_ttl": "168h",
-                "max_lease_ttl": "720h",
-                "backend": {
-                  "file": {
-                    "path": "/vault/file"
-                  }
-                },
-                "listener": {
-                  "tcp": {
-                    "address": "0.0.0.0:8200",
-                    "tls_disable": 1
-                  }
-                },
-                "disable_mlock": true
-              }'
+        env:
+        - name: "SKIP_SETCAP"
+          value: "true"
+        - name: "VAULT_LOCAL_CONFIG"
+          value: '{
+            "default_lease_ttl": "168h",
+            "max_lease_ttl": "720h",
+            "backend": {
+              "file": {
+                "path": "/vault/file"
+              }
+            },
+            "listener": {
+              "tcp": {
+                "address": "0.0.0.0:8200",
+                "tls_disable": 1
+              }
+            },
+            "disable_mlock": true
+          }'
 
-          ports:
-            - containerPort: 8200
+        ports:
+        - containerPort: 8200
 
-          volumeMounts:
-            - name: "vault-data"
-              mountPath: "/vault/file"
+        volumeMounts:
+        - name: "vault-data"
+          mountPath: "/vault/file"
 
       volumes:
-        - name: "vault-data"
-          persistentVolumeClaim:
-            claimName: "vault-data"
+      - name: "vault-data"
+        persistentVolumeClaim:
+          claimName: "vault-data"

@@ -6,8 +6,8 @@ spec:
   type: "NodePort"
 
   ports:
-    - port: 8500
-      nodePort: 30500
+  - port: 8500
+    nodePort: 30500
 
   selector:
     name: "consul"
