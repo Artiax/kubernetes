@@ -64,7 +64,7 @@ $ kubectl apply -f services/openldap.yaml -f deployments/openldap.yaml
 # Create a service and deployment for phpLDAPadmin.
 $ kubectl apply -f services/phpldapadmin.yaml -f deployments/phpldapadmin.yaml
 
-# Access Jenkins UI.
+# Access phpLDAPadmin UI.
 $ minikube service phpldapadmin --https
   Password: admin
 ```
