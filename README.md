@@ -1,8 +1,11 @@
 # Kubernetes (Minikube)
-- Consul
-- Vault
-- Jenkins (master with dynamic kubernetes slaves for image build pipeline).
-- Tiller (helm)
+- [Minikube](#minikube)
+- [Consul](#consul)
+- [Vault](#vault)
+- [OpenLDAP](#openldap)
+- [phpLDAPadmin](#phpldapadmin)
+- [Jenkins](#jenkins) (master with dynamic kubernetes slaves for image build pipeline)
+- [Tiller](#tiller) (helm)
 
 ## Minikube
 For instructions on how to setup Minikube on your machine refer to [Install Minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/).
