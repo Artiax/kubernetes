@@ -21,6 +21,18 @@ spec:
         image: "jenkins:0.0.1"
         imagePullPolicy: "Never"
 
+        env:
+        - name: "CONSUL_ADDR"
+          valueFrom:
+            configMapKeyRef:
+              name: "jenkins"
+              key: "CONSUL_ADDR"
+        - name: "VAULT_ADDR"
+          valueFrom:
+            configMapKeyRef:
+              name: "jenkins"
+              key: "VAULT_ADDR"
+
         readinessProbe:
           httpGet:
             path: /login
