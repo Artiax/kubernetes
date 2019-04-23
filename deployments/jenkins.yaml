@@ -21,18 +21,6 @@ spec:
         image: "jenkins:0.0.1"
         imagePullPolicy: "Never"
 
-        env:
-        - name: "CONSUL_ADDR"
-          valueFrom:
-            configMapKeyRef:
-              name: "jenkins"
-              key: "CONSUL_ADDR"
-        - name: "VAULT_ADDR"
-          valueFrom:
-            configMapKeyRef:
-              name: "jenkins"
-              key: "VAULT_ADDR"
-
         readinessProbe:
           httpGet:
             path: /login
@@ -53,8 +41,14 @@ spec:
         - name: "jenkins-data"
           subPath: "users"
           mountPath: "/var/jenkins/users"
+        - name: "jenkins-config"
+          mountPath: "/etc/config"
+          readOnly: true
 
       volumes:
       - name: "jenkins-data"
         persistentVolumeClaim:
           claimName: "jenkins-data"
+      - name: "jenkins-config"
+        configMap:
+          name: "jenkins"
