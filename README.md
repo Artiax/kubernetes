@@ -24,7 +24,7 @@ $ kubectl apply -f persistentVolumeClaims/consul.yaml
 # Create a service and deployment for Consul.
 $ kubectl apply -f services/consul.yaml -f deployments/consul.yaml
 # Populate jenkins/rbac Consul key value with preliminary rbac configuration.
-$ curl -d @consul/rbac -X PUT "$(minikube service consul --url)/v1/kv/jenkins/rbac"
+$ curl --data-binary @consul/rbac -X PUT "$(minikube service consul --url)/v1/kv/jenkins/rbac"
 
 # Access Consul UI
 $ minikube service consul
