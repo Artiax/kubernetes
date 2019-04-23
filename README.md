@@ -23,6 +23,8 @@ $ minikube start \
 $ kubectl apply -f persistentVolumeClaims/consul.yaml
 # Create a service and deployment for Consul.
 $ kubectl apply -f services/consul.yaml -f deployments/consul.yaml
+# Populate jenkins/rbac Consul key value with preliminary rbac configuration.
+$ curl -d @consul/rbac -X PUT "$(minikube service consul --url)/v1/kv/jenkins/rbac"
 
 # Access Consul UI
 $ minikube service consul
@@ -80,6 +82,8 @@ $ eval $(minikube docker-env)
 $ docker build -t jenkins:0.0.1 -t jenkins:latest jenkins
 $ docker build -t jenkins-slave:0.0.1 -t jenkins-slave:latest jenkins-slave
 
+# Create a configMap with Consul and Vault addresses.
+$ kubectl create configmap jenkins --from-literal=CONSUL_ADDR=$(minikube service consul --url) --from-literal=VAULT_ADDR=$(minikube service vault --url)
 # Create a persistent volume to retain the jobs when container is restarted.
 $ kubectl apply -f persistentVolumeClaims/jenkins.yaml
 # Create a service account and relevant policies required for slave provisioning.
